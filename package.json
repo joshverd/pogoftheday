@@ -1,0 +1,56 @@
+{
+  "scripts": {
+    "frontend": "./node_modules/.bin/webpack-dev-server --dev --port 3000",
+    "backend": "./node_modules/.bin/nodemon --exec \"ts-node\" --files app.ts",
+    "build": "./node_modules/.bin/concurrently -p \"[{name}]\" -n \"Frontend,Backend\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run build-frontend\" \"npm run build-backend\"",
+    "build-and-test": "./node_modules/.bin/concurrently -p \"[{name}]\" -n \"Tests,Frontend,Backend\" -c \"bgRed.bold,bgBlue.bold,bgMagenta.bold\" \"npm t\" \"npm run build-frontend\" \"npm run build-backend\"",
+    "build-backend": "./node_modules/.bin/tsc --outDir build --project ./tsconfig.json",
+    "build-frontend": "./node_modules/.bin/webpack --mode production",
+    "start": "set NODE_ENV=development&& concurrently \"npm run frontend\" \"npm run backend\"",
+    "backend-production": "NODE_ENV=production&& concurrently \"npm run frontend\" \"npm run backend\"",
+    "test": "set NODE_ENV=test&& jest --runInBand --detectOpenHandles --coverage"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "@types/express": "^4.17.6",
+    "@types/html-webpack-plugin": "^3.2.3",
+    "@types/jest": "^26.0.19",
+    "@types/supertest": "^2.0.10",
+    "axios": "^0.21.0",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.2",
+    "css-loader": "^2.1.1",
+    "dayjs": "^1.9.6",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^26.6.3",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
+    "null-loader": "^2.0.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.5",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "supertest": "^6.0.1",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^7.0.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "public/*",
+      "src/*"
+    ]
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.9",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  }
+}
