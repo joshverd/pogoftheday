@@ -5,4 +5,8 @@ module.exports = {
     '/node_modules/',
     '/build/',
   ],
+  modulePathIgnorePatterns: [
+    '/node_modules/',
+    '/build/',
+  ],
 };
