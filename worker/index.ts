@@ -25,5 +25,5 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, { useUnifiedTopology: true 
   }
 
   // Processes
-  require('./processes/daily')(db, global);
+  require('./processes/emote')(db, global);
 });
