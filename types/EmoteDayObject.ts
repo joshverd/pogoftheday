@@ -19,6 +19,8 @@ type EmoteDayObject = {
   emoteImageHash: string,
   // The URL of the emoji 
   emoteImageURL: string,
+  // When this object was last updated at
+  lastUpdatedAt: string,
 }
 
 export default EmoteDayObject;

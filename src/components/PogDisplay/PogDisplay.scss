@@ -1,0 +1,57 @@
+@import '../../variables.scss';
+
+$box-height: 260px;
+
+.pogchampWrapper {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+
+  > .pogchampDisplay {
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    height: $box-height;
+    width: $box-height;
+    border-radius: 3px;
+    background-color: $purple;
+  
+    > .errorWrapper { 
+      display: flex;
+      flex: 1 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      > .error {
+        color: $white;
+        font-size: 16px;
+        text-align: center;
+      }
+  
+      > img {
+        width: 92%;
+        height: 60px;
+        display: block;
+        margin-top: 30px;
+      }
+    }
+  
+    > img {
+      height: $box-height;
+      width: $box-height;
+    }
+  }
+
+  > .lastUpdatedTextWrapper {
+    display: flex;
+    flex: 0 0 25px;
+    align-items: flex-end;
+    justify-content: center;
+
+    > span {
+      color: rgba($white, .5);
+      font-size: 13px;
+    }
+  }
+}

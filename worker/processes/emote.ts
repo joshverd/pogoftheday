@@ -66,5 +66,5 @@ module.exports = async (db: Db, global: WorkerGlobalObject) => {
     });
 
     console.log('Updated emote day object', updatedEmoteDayObject);
-  }, 1 * 60);
+  }, 1 * 60 * 1000);
 } 

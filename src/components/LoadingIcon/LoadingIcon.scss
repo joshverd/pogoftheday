@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(365deg);
+  }
+}
+
+.loadingIcon {
+  width: 30px; 
+  height: 30px;
+  animation: spinner .4s linear infinite;
+  color: $white;
+}

@@ -1,10 +1,29 @@
 @import '../../variables.scss';
 
 .appWrapper {
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
+  padding: 30px;
+
+  > .logoWrapper {
+    display: flex;
+    flex: 0 0 20%;
+    align-items: center;
+    justify-content: center;
+
+    > img {
+      max-width: 900px;
+      width: 96vw;
+    }
+  }
+
+  > .pogDisplayWrapper {
+    display: flex;
+    flex: 0 0 40%;
+    align-items: center;
+    justify-content: center;
+  }
 }

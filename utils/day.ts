@@ -1,3 +1,6 @@
+// Utils
+import timeUtils from './time';
+
 // Constants
 import DatabaseCollections from '../constants/DatabaseCollections';
 
@@ -10,6 +13,30 @@ export default {
   getEmoteDayObjectByDate,
   createEmoteDayObject,
   updateEmoteDayObjectImage,
+  getMostRecentEmoteDayObject,
+}
+
+async function getMostRecentEmoteDayObject(
+  {
+    db,
+  } : {
+    db: Db,
+  },
+): Promise<EmoteDayObject | undefined> {
+  const mostRecentEmoteDayObjectAggregationArray = await db.collection(DatabaseCollections.days).aggregate<EmoteDayObject>([
+    {
+      $sort: {
+        _id: -1,
+      },
+    },
+    {
+      $limit: 1,
+    },
+  ]).toArray();
+
+  const mostRecentEmoteDayObject: EmoteDayObject | undefined = mostRecentEmoteDayObjectAggregationArray[0];
+  
+  return mostRecentEmoteDayObject;
 }
 
 async function updateEmoteDayObjectImage(
@@ -33,6 +60,7 @@ async function updateEmoteDayObjectImage(
       $set: {
         emoteImageHash,
         emoteImageURL,
+        lastUpdatedAt: timeUtils.getTime(),
       },
     },
     {
@@ -70,6 +98,7 @@ async function createEmoteDayObject(
     },
     emoteImageHash,
     emoteImageURL,
+    lastUpdatedAt: timeUtils.getTime(),
   };
 
   // Insert new emote day object

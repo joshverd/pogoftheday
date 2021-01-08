@@ -20,7 +20,7 @@ async function getEmoteImage(
   const cacheBuster = Math.random() * 100_000_000;
 
   // Ping the twitch CDN to get the current PogChamp emoji
-  const response = await axios.get<Buffer>(`http://static-cdn.jtvnw.net/emoticons/v1/${emoteID}/1.0?cache=${cacheBuster}`, {
+  const response = await axios.get<Buffer>(`http://static-cdn.jtvnw.net/emoticons/v1/${emoteID}/5.0?cache=${cacheBuster}`, {
     responseType: 'arraybuffer'
   });
 

@@ -1,17 +1,20 @@
-import * as React from 'react';
+import React from 'react';
 import style from './App.scss';
 
 // Components
-import RequestsDisplay from '../../components/RequestsDisplay/RequestsDisplay';
-import IncrementRequests from '../../components/IncrementRequests/IncrementRequests';
+import PogDisplay from '../../components/PogDisplay/PogDisplay';
 
 type AppProps = {};
 
 const App = (props: AppProps) => {
   return (
     <div className={style.appWrapper}>
-      <RequestsDisplay />
-      <IncrementRequests />
+      <div className={style.logoWrapper}>
+        <img src="/img/logo.png" />
+      </div>
+      <div className={style.pogDisplayWrapper}>
+        <PogDisplay />
+      </div>
     </div>
   );
 }
