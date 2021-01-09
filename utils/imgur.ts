@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 // Typescript doesn't like this for some reason
-//
-// @ts-ignore
 import FormData from 'form-data';
 
 // Types
