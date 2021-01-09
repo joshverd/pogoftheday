@@ -1,4 +1,5 @@
 import HtmlWebPackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import * as path from 'path';
 
 // Importing config file
@@ -89,5 +90,13 @@ module.exports = {
   },
   plugins: [
     htmlPlugin,
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname + '/public/img'),
+          to: path.resolve(__dirname + '/build/public/img'),
+        },
+      ],
+    }),
   ],
 };
