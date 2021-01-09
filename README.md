@@ -1,7 +1,5 @@
-# react-boilerplate-template
-A template for building apps with React, TypeScript, and Node.JS
-
-The npm start script runs both the front-end and the back-end at the same time using Concurrently. Nodemon is used to watch for backend changes and automatically recompile/restart the app. Webpack-dev-server automagically recompiles the front-end when it detects a change. In package.json, we have a Nodemon flag set to ignore any changes from `src/` so that the back-end does not restart due to a front-end change.
+# pogoftheday
+Source code for [pogoftheday.com](https://pogoftheday.com)
 
 ### Directory/File List
  - `./configs` - Configs for each environment (template has development and production, but more can be added if needed) and the `default.config.ts` file, which is the default config file.
@@ -18,16 +16,17 @@ The npm start script runs both the front-end and the back-end at the same time u
     - You can reference any type in this folder like this: `import type Example from 'types/Example';`
  - `./utils` - Utility functions used by the backend
  - `./config.ts` - The backend config aggregator
+ - `.env` - A file containing environment variables required for the app to function. A template file can be found in `.env.example` 
 
 ### Setup
 1. Make sure you have node.js installed on your machine.
 2. While inside the directory containing this project, run `npm i` to install all required dependencies.
+4. Copy the `.env.example` file to `.env`, then fill out all environment variables
 3. Check to see if your IDE supports Typescript natively or if you need to install a package for language support. A huge benefit of Typescript is its amazing language server. Take advantage of it!
 
 ### Running Dev
 This will start a server on localhost:3000 and automatically recompile backend/frontend when a change is detected.
 ```
-npm i
 npm start
 ```
 
@@ -42,9 +41,6 @@ After building, you can run the `./build` directory just like a normal node app.
 ```
 node ./build/app.js
 ```
-
-### TypeScript/Jest setup
-I will make changes to the configuration of TypeScript and Jest as needed in this project, as I probably have this setup in a very inefficient way.
 
 ### Found an issue?
 Open a pull request :)
