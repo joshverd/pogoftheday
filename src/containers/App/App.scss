@@ -26,4 +26,15 @@
     align-items: center;
     justify-content: center;
   }
+
+  > .socialWrapper {
+    display: flex;
+    flex: 1 1;
+    align-items: flex-end;
+    justify-content: center;
+
+    > a > svg {
+      fill: $white;
+    }
+  }
 }
